@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-export default class Prices extends Component {
+export default class OtaYhteytta extends Component {
   render() {
     return (
-      <p>Prices</p>
+      <p>Ota Yhteytta</p>
     );
   }
 }
