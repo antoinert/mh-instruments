@@ -6,7 +6,7 @@ export default class NavigationBar extends Component {
   render() {
     return (
       <Navbar fixedTop>
-        <h1 style={{textAlign: "center"}}>Pauli Matinheikki Instruments</h1>
+        <img style={{height: 67, width: 250, display: "block", marginLeft: "auto", marginRight: "auto", marginTop: 20}} src="http://www.matinheikkiguitars.fi/wp-content/uploads/2017/08/cropped-matinheikki-1.png"></img>
         <Nav>
           <NavItem eventKey={1} componentClass={NavLink} href="/" to="/">
             ETUSIVU
