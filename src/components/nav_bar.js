@@ -2,7 +2,23 @@ import React, { Component } from 'react';
 import { Navbar, NavItem, NavDropdown, Nav, MenuItem, PageHeader } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
+import NavigationDropdown from './nav_dropdown';
+
 export default class NavigationBar extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = { isOpen: false }
+  }
+
+  handleOpen = () => {
+    this.setState({ isOpen: true })
+  }
+
+  handleClose = () => {
+     this.setState({ isOpen: false })
+  }
+
   render() {
     return (
       <Navbar fixedTop>
@@ -14,13 +30,14 @@ export default class NavigationBar extends Component {
           <NavItem eventKey={2} componentClass={NavLink} href="/tietoja" to="/tietoja">
             TIETOJA MINUSTA
           </NavItem>
-          <NavDropdown eventKey={3} title="KITARAT" id="basic-nav-dropdown">
-            <MenuItem eventKey={3.1}>Perfect 6</MenuItem>
-            <MenuItem eventKey={3.2}>RHINO</MenuItem>
-          </NavDropdown>
-          <NavDropdown eventKey={3} title="BASSOT" id="basic-nav-dropdown">
-            <MenuItem eventKey={3.1}>NGIN</MenuItem>
-          </NavDropdown>
+          <NavigationDropdown
+            title="KITARAT"
+            items={["Perfect 6", "RHINO"]}
+          />
+          <NavigationDropdown
+            title="BASSOT"
+            items={["NGIN"]}
+          />
           <NavItem eventKey={3} componentClass={NavLink} href="/piirustukset" to="/piirustukset">
             CAD-PIIRUSTUKSET
           </NavItem>
