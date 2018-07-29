@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar, NavItem, NavDropdown, Nav, MenuItem, PageHeader } from 'react-bootstrap';
-import { NavLink, Redirect } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default class NavigationDropdown extends Component {
 
