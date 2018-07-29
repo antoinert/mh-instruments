@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchInstruments } from '../actions';
 import _ from 'lodash';
-
+import Soitin from './soitin';
 
 class AllInstruments extends Component {
 
@@ -14,7 +14,7 @@ class AllInstruments extends Component {
   renderInstruments() {
     return _.map(this.props.instruments, instrument => {
       return (
-        <div>{instrument.name}</div>
+        <Soitin instrument={instrument} />
       );
     });
   }

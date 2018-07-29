@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchInstrument } from '../actions';
 
+import Soitin from './soitin';
 
 class Instrument extends Component {
 
@@ -21,9 +22,7 @@ class Instrument extends Component {
     if (!instrument) return <div></div>;
 
     return (
-      <div>
-        {instrument.name}
-      </div>
+      <Soitin instrument={instrument} />
     );
   }
 }
