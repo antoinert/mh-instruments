@@ -32,11 +32,13 @@ export default class NavigationBar extends Component {
           </NavItem>
           <NavigationDropdown
             title="KITARAT"
-            items={["Perfect 6", "RHINO"]}
+            items={[["Perfect 6", "perfect6"], ["RHINO", "rhino"]]}
+            type="kitara"
           />
           <NavigationDropdown
             title="BASSOT"
-            items={["NGIN"]}
+            items={[["NGIN", "ngin"]]}
+            type="basso"
           />
           <NavItem eventKey={3} componentClass={NavLink} href="/piirustukset" to="/piirustukset">
             CAD-PIIRUSTUKSET
