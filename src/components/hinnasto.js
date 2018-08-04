@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
-import { PRICES } from './app';
+import { connect } from 'react-redux';
+
+import { fetchPrices } from '../actions';
 import _ from 'lodash';
 
-export default class Hinnasto extends Component {
+class Hinnasto extends Component {
+  componentDidMount() {
+    this.props.fetchPrices();
+  }
+
   renderPrices() {
-    return _.map(PRICES, price => {
+    console.log(this.props.prices);
+    return _.map(this.props.prices, price => {
       return (
         <tr>
           <td style={{border: "1px solid #dddddd", paddingLeft: 5}}>
@@ -69,3 +76,9 @@ export default class Hinnasto extends Component {
     );
   }
 }
+
+function mapStateToProps({prices}) {
+  return { prices };
+}
+
+export default connect(mapStateToProps, { fetchPrices })(Hinnasto);
