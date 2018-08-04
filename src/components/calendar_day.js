@@ -7,7 +7,6 @@ export default class CalendarDay extends Component {
 
   renderSlots() {
     return _.map(this.props.day, (slot, key) => {
-      console.log(key);
       return (
         <Col xs={2} style={{width:"20%"}}>
           <CalendarSlot time={key} slot={slot}/>

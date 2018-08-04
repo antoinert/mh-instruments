@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { reserveSlot } from '../actions';
 
-export default class CalendarSlot extends Component {
+class CalendarSlot extends Component {
+
+  reserve() {
+    this.props.reserveSlot(this.props.slot);
+  }
+
   render() {
     return (
       <div style={{textAlign:"center", border:"1px solid black"}}>
         <p>{this.props.time}</p>
-        <button>{this.props.slot.reserved ? "VARATTU" : "VARAA"}</button>
+        <button onClick={this.reserve.bind(this)}>{this.props.slot.reserved ? "VARATTU" : "VARAA"}</button>
       </div>
     );
   }
 }
+
+export default connect(null, { reserveSlot })(CalendarSlot);

@@ -5,6 +5,7 @@ export const FETCH_INSTRUMENTS = 'fetch_instruments';
 export const FETCH_INSTRUMENT = 'fetch_instrument';
 export const FETCH_PRICES = 'fetch_prices';
 export const FETCH_CALENDAR = 'fetch_calendar';
+export const RESERVE_SLOT = 'reserver_slot';
 
 export function fetchInstruments(type) {
   var instruments = _.filter(INSTRUMENTS, {'type': type});
@@ -32,9 +33,17 @@ export function fetchPrices() {
 }
 
 export function fetchCalendar() {
-  console.log(CALENDAR);
   return {
     type: FETCH_CALENDAR,
     payload: CALENDAR
+  }
+}
+
+export function reserveSlot(slot) {
+  CALENDAR[slot.date][slot.time].reserved = true;
+
+  return {
+    type: RESERVE_SLOT,
+    payload: slot
   }
 }

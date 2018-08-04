@@ -129,24 +129,34 @@ export const PRICES = {
 export const CALENDAR = {
   "11-10-1992": {
     "10:30-11:00": {
+      "time": "10:30-11:00",
       "reserved": false,
-      "length": 30
+      "length": 30,
+      "date": "11-10-1992"
     },
     "11:00-11:30": {
+      "time": "11:00-11:30",
       "reserved": false,
-      "length": 30
+      "length": 30,
+      "date": "11-10-1992"
     },
     "11:30-12:00": {
+      "time": "11:30-12:00",
       "reserved": false,
-      "length": 30
+      "length": 30,
+      "date": "11-10-1992"
     },
     "12:00-12:30": {
+      "time": "12:00-12:30",
       "reserved": false,
-      "length": 30
+      "length": 30,
+      "date": "11-10-1992"
     },
     "12:30-13:00": {
+      "time": "12:30-13:00",
       "reserved": false,
-      "length": 30
+      "length": 30,
+      "date": "11-10-1992"
     },
   }
 }
