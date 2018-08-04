@@ -10,7 +10,6 @@ class Hinnasto extends Component {
   }
 
   renderPrices() {
-    console.log(this.props.prices);
     return _.map(this.props.prices, price => {
       return (
         <tr>

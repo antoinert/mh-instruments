@@ -1,11 +1,25 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col } from 'react-bootstrap';
-import CalendarWeek from './calendar_week';
+import { connect } from 'react-redux';
 
-export default class Calendar extends Component {
+import { Grid, Row, Col } from 'react-bootstrap';
+import CalendarDay from './calendar_day';
+import { fetchCalendar } from '../actions';
+
+class Calendar extends Component {
+
+  componentDidMount() {
+    this.props.fetchCalendar();
+  }
+
   render() {
     return (
-        <CalendarWeek style={{paddingLeft:"20px"}}/>
+        <CalendarDay style={{paddingLeft:"20px"}} day={this.props.calendar["11-10-1992"]}/>
     );
   }
 }
+
+function mapStateToProps({ calendar }) {
+  return { calendar };
+}
+
+export default connect(mapStateToProps, { fetchCalendar })(Calendar);

@@ -126,6 +126,32 @@ export const PRICES = {
   }
 }
 
+export const CALENDAR = {
+  "11-10-1992": {
+    "10:30-11:00": {
+      "reserved": false,
+      "length": 30
+    },
+    "11:00-11:30": {
+      "reserved": false,
+      "length": 30
+    },
+    "11:30-12:00": {
+      "reserved": false,
+      "length": 30
+    },
+    "12:00-12:30": {
+      "reserved": false,
+      "length": 30
+    },
+    "12:30-13:00": {
+      "reserved": false,
+      "length": 30
+    },
+  }
+}
+
+
 export default class App extends Component {
   render() {
     return (
